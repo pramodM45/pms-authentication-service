@@ -21,6 +21,8 @@ phases:
     commands:
       - printenv
       - echo Build completed on `date`
+      - echo $IMAGE_URI
+      - echo $TAG
       - echo Pushing the Docker images...
       - docker push $IMAGE_URI 
       - echo push completed
