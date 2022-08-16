@@ -1,9 +1,13 @@
 version: 0.2
-
+env:
+  variables:
+    JAVA_HOME: "/usr/lib/jvm/java-17-amazon-corretto/"
 phases:
-  install: 
-    runtime-versions: 
-      java: corretto11
+  install:
+        commands:
+            - apt-get update; apt-get install -y java-17-amazon-corretto-jdk
+            - update-alternatives --auto javac
+            - update-alternatives --auto java
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
