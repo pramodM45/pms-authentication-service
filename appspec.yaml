@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-south-1:860061945305:task-definition/pms-pramo-authentication-service:4"
+        LoadBalancerInfo:
+          ContainerName: "pramo-authentication-service"
+          ContainerPort: 8080
+        PlatformVersion: "LATEST"
