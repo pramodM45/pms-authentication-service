@@ -20,7 +20,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - mvn clean package -Ddockerfile.skip
-      - docker build -tag $IMAGE_URI .
+      - docker build -t $IMAGE_URI .
   post_build:
     commands:
       - printenv
